@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-				listTitle: "No Title",
+				listTitle: "Todo List",
 				todoList: [],
 				checkItem: ""
 		},
@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch('https://assets.breatheco.de/apis/fake/todos/user/mappel21').then
 			},
 			addTitle: title =>(title === "" ? setStore({listTitle: "No title"}) : setStore({ listTitle: title}))
+			addItem
 		}
 	};
 };
