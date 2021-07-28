@@ -11,7 +11,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(res => res.json())
 				.then(response => setStore({ todos: response }));
 			},
-			addTitle: title =>(title === "" ? setStore({listTitle: "No title"}) : setStore({ listTitle: title}))
+			addTodo: todo => {
+				fetch('https://assets.breatheco.de/apis/fake/todos/user/mappel21'),{
+					method; "put"
+					body: JSON.stringify(todo),
+					headers: {
+						"Content-Type": "application/json"
+				}
+				todo = [...getStore().data, todo];
+				console.log("todo", todo);
+			}
+
+			// addTitle: title =>(title === "" ? setStore({listTitle: "No title"}) : setStore({ listTitle: title}))
 			
 		}
 	};
