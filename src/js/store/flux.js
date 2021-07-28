@@ -12,19 +12,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(response => setStore({ todos: response }));
 			},
 			addTodo: todo => {
-				fetch('https://assets.breatheco.de/apis/fake/todos/user/mappel21'),{
-					method; "put"
+				todo = [...getStore().data, todo];
+				console.log("todo", todo);
+				fetch('https://assets.breatheco.de/apis/fake/todos/user/mappel21'), {
+					method: "PUT",
 					body: JSON.stringify(todo),
 					headers: {
 						"Content-Type": "application/json"
-				}
-				todo = [...getStore().data, todo];
-				console.log("todo", todo);
-			}
+					}
+				}.then(() => getActions().getTodo());
+			},
 
 			// addTitle: title =>(title === "" ? setStore({listTitle: "No title"}) : setStore({ listTitle: title}))
 			
-		}
+		};
 	};
 };
 
