@@ -26,7 +26,7 @@ export function Home() {
 			</button>
 			{store.todoList.map((item, index) => (
 				<div key={index}>
-					{item}
+					{item.label}
 					<button onClick={() => actions.deleteItem(store.todoList.filter(word => word !== item))}>x</button>
 				</div>
 			))}
