@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 export function Home() {
 	const [todo, setTodo] = useState("");
 	const { store, actions } = useContext(Context);
+	const [modify, setModify] = useState({ state: false, i: undefined });
 
 	return (
 		<div className="text-center mt-5">
