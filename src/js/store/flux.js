@@ -27,6 +27,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			modifyTodo: (element, index) => {
 				let modify = getStore().todoList;
 				modify[index] = { label: element, done: false };
+				fetch("https://assets.breatheco.de/apis/fake/todos/user/mappel21", {
+					method: "PUT",
+					body: JSON.stringify(modify),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				}).then(() => getActions().getTodo());
 			},
 			deleteItem: array => {
 				fetch("https://assets.breatheco.de/apis/fake/todos/user/mappel21", {
