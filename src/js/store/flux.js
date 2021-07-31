@@ -24,12 +24,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				}).then(() => getActions().getTodo());
 			},
-			modifyTodo: (element, index) => {
-				let modify = getStore().todoList;
-				modify[index] = { label: element, done: false };
+			modifyTodo: element => {
+				// let modify = getStore().todoList;
+				// modify[index] = { label: element, done: false };
 				fetch("https://assets.breatheco.de/apis/fake/todos/user/mappel21", {
 					method: "PUT",
-					body: JSON.stringify(modify),
+					body: JSON.stringify(element),
 					headers: {
 						"Content-Type": "application/json"
 					}

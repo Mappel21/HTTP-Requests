@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
+import Todo from "../component/todo";
 
 //create your first component
 export function Home() {
@@ -27,7 +28,8 @@ export function Home() {
 			</button>
 			{store.todoList.map((item, index) => (
 				<div key={index}>
-					{item.label}
+					{/* {item.label} */}
+					<Todo item={item} index={index} />
 					<button onClick={() => actions.deleteItem(store.todoList.filter(word => word !== item))}>x</button>
 				</div>
 			))}
