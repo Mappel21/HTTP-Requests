@@ -17,7 +17,9 @@ const Todo = ({ item, index }) => {
 					</div>
 				)}
 				{!edit ? (
-					<button onClick={() => setEdit(true)}>+</button>
+					<button onClick={() => setEdit(true)}>
+						<i className="fas fa-edit" />
+					</button>
 				) : (
 					<button
 						onClick={() => {
@@ -27,7 +29,7 @@ const Todo = ({ item, index }) => {
 							setEdit(false);
 							setUpdate("");
 						}}>
-						V
+						<i className="fas fa-clipboard-check" />
 					</button>
 				)}
 			</div>

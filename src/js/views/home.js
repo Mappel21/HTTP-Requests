@@ -30,7 +30,9 @@ export function Home() {
 				<div key={index}>
 					{/* {item.label} */}
 					<Todo item={item} index={index} />
-					<button onClick={() => actions.deleteItem(store.todoList.filter(word => word !== item))}>x</button>
+					<button onClick={() => actions.deleteItem(store.todoList.filter(word => word !== item))}>
+						<i className="fas fa-window-close" />
+					</button>
 				</div>
 			))}
 			{/* <footer>{list.length + " items left"}</footer> */}
